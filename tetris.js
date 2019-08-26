@@ -1,7 +1,7 @@
 let canvas;
 let ctx;
-let gBArrayHeight = 20; // Number of cells in array height
-let gBArrayWidth = 12; // Number of cells in array width
+const GAME_BOARD_TILE_COUNT_VERTICAL = 20; // Number of cells in array height
+const GAME_BOARD_TILE_COUNT_HORIZONTAL = 12; // Number of cells in array width
 let startX = 4; // Starting X position for Tetromino
 let startY = 0; // Starting Y position for Tetromino
 let score = 0; // Tracks the score
@@ -10,7 +10,7 @@ let winOrLose = "Playing";
 // Used as a look up table where each value in the array
 // contains the x & y position we can use to draw the
 // box on the canvas
-let coordinateArray = [...Array(gBArrayHeight)].map(e => Array(gBArrayWidth).fill(0));
+let coordinateArray = [...Array(GAME_BOARD_TILE_COUNT_VERTICAL)].map(e => Array(GAME_BOARD_TILE_COUNT_HORIZONTAL).fill(0));
 
 let curTetromino = [[1,0], [0,1], [1,1], [2,1]];
 
@@ -30,11 +30,11 @@ let stoppedShapeArray = [...Array(20)].map(e => Array(12).fill(0));
 
 // 4. Created to track the direction I'm moving the Tetromino
 // so that I can stop trying to move through walls
-let DIRECTION = {
+const DIRECTION = {
     IDLE: 0,
     DOWN: 1,
     LEFT: 2,
-    RIGHT: 3
+    RIGHT: 3,
 };
 let direction;
 
@@ -51,13 +51,11 @@ document.addEventListener('DOMContentLoaded', SetupCanvas);
 // Creates the array with square coordinates [Lookup Table]
 // [0,0] Pixels X: 11 Y: 9, [1,0] Pixels X: 34 Y: 9, ...
 function CreateCoordArray(){
-    let xR = 0, yR = 19;
     let i = 0, j = 0;
     for(let y = 9; y <= 446; y += 23){
         // 12 * 23 = 276 - 12 = 264 Max X value
         for(let x = 11; x <= 264; x += 23){
             coordinateArray[i][j] = new Coordinates(x,y);
-            // console.log(i + ":" + j + " = " + coordinateArray[i][j].x + ":" + coordinateArray[i][j].y);
             i++;
         }
         j++;
@@ -420,11 +418,11 @@ function CheckForCompletedRows(){
     let startOfDeletion = 0;
 
     // Check every row to see if it has been completed
-    for (let y = 0; y < gBArrayHeight; y++)
+    for (let y = 0; y < GAME_BOARD_TILE_COUNT_VERTICAL; y++)
     {
         let completed = true;
         // Cycle through x values
-        for(let x = 0; x < gBArrayWidth; x++)
+        for(let x = 0; x < GAME_BOARD_TILE_COUNT_HORIZONTAL; x++)
         {
             // Get values stored in the stopped block array
             let square = stoppedShapeArray[x][y];
@@ -447,7 +445,7 @@ function CheckForCompletedRows(){
             rowsToDelete++;
 
             // Delete the line everywhere
-            for(let i = 0; i < gBArrayWidth; i++)
+            for(let i = 0; i < GAME_BOARD_TILE_COUNT_HORIZONTAL; i++)
             {
                 // Update the arrays by deleting previous squares
                 stoppedShapeArray[i][y] = 0;
@@ -475,7 +473,7 @@ function CheckForCompletedRows(){
 function MoveAllRowsDown(rowsToDelete, startOfDeletion){
     for (var i = startOfDeletion-1; i >= 0; i--)
     {
-        for(var x = 0; x < gBArrayWidth; x++)
+        for(var x = 0; x < GAME_BOARD_TILE_COUNT_HORIZONTAL; x++)
         {
             var y2 = i + rowsToDelete;
             var square = stoppedShapeArray[x][i];
