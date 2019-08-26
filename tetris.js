@@ -22,11 +22,11 @@ let tetrominoColors = ['purple', 'cyan', 'blue', 'yellow', 'orange', 'green', 'r
 let curTetrominoColor;
 
 // 4. Create gameboard array so we know where other squares are
-let gameBoardArray = [...Array(20)].map(e => Array(12).fill(0));
+let gameBoardArray = [...Array(GAME_BOARD_TILE_COUNT_VERTICAL)].map(e => Array(GAME_BOARD_TILE_COUNT_HORIZONTAL).fill(0));
 
 // 6. Array for storing stopped shapes
 // It will hold colors when a shape stops and is added
-let stoppedShapeArray = [...Array(20)].map(e => Array(12).fill(0));
+let stoppedShapeArray = [...Array(GAME_BOARD_TILE_COUNT_VERTICAL)].map(e => Array(GAME_BOARD_TILE_COUNT_HORIZONTAL).fill(0));
 
 // 4. Created to track the direction I'm moving the Tetromino
 // so that I can stop trying to move through walls
@@ -330,7 +330,7 @@ function CheckForVerticalCollison() {
             collision = true;
             break;
         }
-        if (y >= 20) {
+        if (y >= GAME_BOARD_TILE_COUNT_VERTICAL) {
             collision = true;
             break;
         }
