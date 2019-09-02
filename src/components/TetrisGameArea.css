@@ -1,5 +1,7 @@
-.tetris-area {
-  background-color: white;
+.tetris-game-area {
   border: 1px solid black;
-  padding: 20px;
+}
+
+.tetris-line {
+  display: flex;
 }

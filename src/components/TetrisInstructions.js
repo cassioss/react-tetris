@@ -5,7 +5,7 @@ import './TetrisInstructions.css';
 export class TetrisInstructions extends React.Component {
   render() {
     return (
-      <div>WHAT IS HAPPENING?</div>
+      <div style={{backgroundColor: 'cyan'}}>WHAT IS HAPPENING?</div>
     );
   }
 }
