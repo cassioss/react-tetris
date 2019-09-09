@@ -10,9 +10,11 @@ import './GameBoard.css';
 export class GameBoard extends React.Component {
   render() {
     return (
-      <div className="game-board">
-        <TetrisGameArea colorMatrix={this.props.colorMatrix} />
-        <TetrisInstructions />
+      <div className="game-wrapper">
+        <div className="game-board">
+          <TetrisGameArea colorMatrix={this.props.colorMatrix} />
+          <TetrisInstructions />
+        </div>
       </div>
     );
   }
