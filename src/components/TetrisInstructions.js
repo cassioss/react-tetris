@@ -1,6 +1,6 @@
-import React from "react";
+import React from 'react';
 
-import "./TetrisInstructions.css";
+import './TetrisInstructions.css';
 
 export class TetrisInstructions extends React.Component {
   render() {

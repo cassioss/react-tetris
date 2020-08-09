@@ -1,9 +1,9 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React from 'react';
+import PropTypes from 'prop-types';
 
-import { GAME_BOARD_TILE_SIZE } from "../constants";
+import { GAME_BOARD_TILE_SIZE } from '../constants';
 
-import "./TetrisGameArea.css";
+import './TetrisGameArea.css';
 
 const TetrisGameArea = ({ colorMatrix }) => (
   <div className="tetris-game-area">
@@ -25,7 +25,7 @@ const TetrisTile = ({ color }) => (
   <div
     style={{
       backgroundColor: color,
-      border: "1px solid black",
+      border: '1px solid black',
       height: GAME_BOARD_TILE_SIZE,
       width: GAME_BOARD_TILE_SIZE,
     }}

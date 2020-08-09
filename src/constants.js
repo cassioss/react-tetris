@@ -6,7 +6,7 @@ const GAME_BOARD_TILE_COUNT_VERTICAL = 20;
 const GAME_BOARD_TILE_SIZE = 30;
 
 // Empty board tile color
-const EMPTY_BOARD_TILE_COLOR = "white";
+const EMPTY_BOARD_TILE_COLOR = 'white';
 
 const EMPTY_BOARD_ARRAY = (input) =>
   [...Array(GAME_BOARD_TILE_COUNT_VERTICAL)].map((_) =>

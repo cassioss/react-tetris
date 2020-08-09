@@ -1,5 +1,5 @@
-import React from "react";
-import TetrisGame from "./games/tetris-game";
+import React from 'react';
+import TetrisGame from './games/tetris-game';
 
 function App() {
   return <TetrisGame />;
