@@ -1,8 +1,8 @@
-import React from 'react';
-import GameBoard from './components/GameBoard';
+import React from "react";
+import TetrisGame from "./games/tetris-game";
 
 function App() {
-  return <GameBoard />;
+  return <TetrisGame />;
 }
 
 export default App;

@@ -1,28 +1,22 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from "react";
+import PropTypes from "prop-types";
 
-import { GAME_BOARD_TILE_SIZE } from '../constants';
+import { GAME_BOARD_TILE_SIZE } from "../constants";
 
-import './TetrisGameArea.css';
+import "./TetrisGameArea.css";
 
 const TetrisGameArea = ({ colorMatrix }) => (
-  <div className='tetris-game-area'>
+  <div className="tetris-game-area">
     {colorMatrix.map((lineColors, yIndex) => (
-      <TetrisLine
-        key={`y-${yIndex}`}
-        lineColors={lineColors}
-      />
+      <TetrisLine key={`y-${yIndex}`} lineColors={lineColors} />
     ))}
   </div>
 );
 
 const TetrisLine = ({ lineColors }) => (
-  <div className='tetris-line'>
+  <div className="tetris-line">
     {lineColors.map((tileColor, xIndex) => (
-      <TetrisTile
-        key={`x-${xIndex}`}
-        color={tileColor}
-      />
+      <TetrisTile key={`x-${xIndex}`} color={tileColor} />
     ))}
   </div>
 );
@@ -31,7 +25,7 @@ const TetrisTile = ({ color }) => (
   <div
     style={{
       backgroundColor: color,
-      border: '1px solid black',
+      border: "1px solid black",
       height: GAME_BOARD_TILE_SIZE,
       width: GAME_BOARD_TILE_SIZE,
     }}

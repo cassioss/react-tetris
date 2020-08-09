@@ -1,11 +1,11 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from "react";
+import PropTypes from "prop-types";
 
-import { EMPTY_BOARD } from '../constants';
-import TetrisGameArea from './TetrisGameArea';
-import TetrisInstructions from './TetrisInstructions';
+import { EMPTY_BOARD } from "../constants";
+import TetrisGameArea from "./TetrisGameArea";
+import TetrisInstructions from "./TetrisInstructions";
 
-import './GameBoard.css';
+import "./GameBoard.css";
 
 export class GameBoard extends React.Component {
   render() {
